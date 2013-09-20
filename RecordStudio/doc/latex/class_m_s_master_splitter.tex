@@ -1,0 +1,145 @@
+\hypertarget{class_m_s_master_splitter}{\section{M\-S\-Master\-Splitter Class Reference}
+\label{class_m_s_master_splitter}\index{M\-S\-Master\-Splitter@{M\-S\-Master\-Splitter}}
+}
+
+
+The \hyperlink{class_m_s_master_splitter}{M\-S\-Master\-Splitter} class uses a mixer to create a stereo stream that at the left channel mixes the sideband and at the right the midband(the mono signal). The resulting stream is send to a splitterstream that creates two outputstreams(0=S, 1=M).  
+
+
+
+
+{\ttfamily \#include $<$msmastercmp.\-h$>$}
+
+
+
+Collaboration diagram for M\-S\-Master\-Splitter\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{class_m_s_master_splitter__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_m_s_master_splitter_abb9f371e43978f5d0c8746d35e8debb4_abb9f371e43978f5d0c8746d35e8debb4}{M\-S\-Master\-Splitter} (D\-W\-O\-R\-D freq, D\-W\-O\-R\-D mixer\-Flags=256$|$0x200000, D\-W\-O\-R\-D splitter\-Flags=0x200000)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_m_s_master_splitter}{M\-S\-Master\-Splitter}. \end{DoxyCompactList}\item 
+bool \hyperlink{class_m_s_master_splitter_ae3fbab075c1c6872ba503f18c92ac792_ae3fbab075c1c6872ba503f18c92ac792}{Set\-Input\-Channel} (D\-W\-O\-R\-D channel, D\-W\-O\-R\-D flags=0x10000)
+\begin{DoxyCompactList}\small\item\em Set\-Input\-Channel Sets the inputchannel for the mixer. If a channel is already applied this channel will be replaced by the new one. \end{DoxyCompactList}\item 
+\hypertarget{class_m_s_master_splitter_ab903ca4a666f5702d79eab169d65cc27_ab903ca4a666f5702d79eab169d65cc27}{const \hyperlink{class_m_s_master_error}{M\-S\-Master\-Error} $\ast$ {\bfseries get\-Last\-Error} ()}\label{class_m_s_master_splitter_ab903ca4a666f5702d79eab169d65cc27_ab903ca4a666f5702d79eab169d65cc27}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_m_s_master_splitter}{M\-S\-Master\-Splitter} class uses a mixer to create a stereo stream that at the left channel mixes the sideband and at the right the midband(the mono signal). The resulting stream is send to a splitterstream that creates two outputstreams(0=S, 1=M). 
+
+Definition at line 13 of file msmastercmp.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_m_s_master_splitter_abb9f371e43978f5d0c8746d35e8debb4_abb9f371e43978f5d0c8746d35e8debb4}{\index{M\-S\-Master\-Splitter@{M\-S\-Master\-Splitter}!M\-S\-Master\-Splitter@{M\-S\-Master\-Splitter}}
+\index{M\-S\-Master\-Splitter@{M\-S\-Master\-Splitter}!MSMasterSplitter@{M\-S\-Master\-Splitter}}
+\subsubsection[{M\-S\-Master\-Splitter}]{\setlength{\rightskip}{0pt plus 5cm}M\-S\-Master\-Splitter\-::\-M\-S\-Master\-Splitter (
+\begin{DoxyParamCaption}
+\item[{D\-W\-O\-R\-D}]{freq, }
+\item[{D\-W\-O\-R\-D}]{mixer\-Flags = {\ttfamily 256~$|$~0x200000}, }
+\item[{D\-W\-O\-R\-D}]{splitter\-Flags = {\ttfamily 0x200000}}
+\end{DoxyParamCaption}
+)}}\label{class_m_s_master_splitter_abb9f371e43978f5d0c8746d35e8debb4_abb9f371e43978f5d0c8746d35e8debb4}
+
+
+\hyperlink{class_m_s_master_splitter}{M\-S\-Master\-Splitter}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em freq} & the sample rate of the mixer \\
+\hline
+{\em mixer\-Flags} & flags used by the mixer. For more information see the bassmix documentation. \\
+\hline
+{\em splitter\-Flags} & flags used by the splitter. More info see basmix documentation. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 4 of file msmastercmp.\-cpp.
+
+
+\begin{DoxyCode}
+5     :\_curInpChannel(0)
+6 \{
+7     \_mixerHandle=BASS\_Mixer\_StreamCreate(freq,2,mixerFlags);
+8     \textcolor{keywordtype}{int} chanMap[]=\{0,1,-1\};
+9     \_msSplitter=BASS\_Split\_StreamCreate(\_mixerHandle,splitterFlags,chanMap);
+10 
+11 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_m_s_master_splitter_ae3fbab075c1c6872ba503f18c92ac792_ae3fbab075c1c6872ba503f18c92ac792}{\index{M\-S\-Master\-Splitter@{M\-S\-Master\-Splitter}!Set\-Input\-Channel@{Set\-Input\-Channel}}
+\index{Set\-Input\-Channel@{Set\-Input\-Channel}!MSMasterSplitter@{M\-S\-Master\-Splitter}}
+\subsubsection[{Set\-Input\-Channel}]{\setlength{\rightskip}{0pt plus 5cm}bool M\-S\-Master\-Splitter\-::\-Set\-Input\-Channel (
+\begin{DoxyParamCaption}
+\item[{D\-W\-O\-R\-D}]{channel, }
+\item[{D\-W\-O\-R\-D}]{flags = {\ttfamily 0x10000}}
+\end{DoxyParamCaption}
+)}}\label{class_m_s_master_splitter_ae3fbab075c1c6872ba503f18c92ac792_ae3fbab075c1c6872ba503f18c92ac792}
+
+
+Set\-Input\-Channel Sets the inputchannel for the mixer. If a channel is already applied this channel will be replaced by the new one. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em channel} & the channel to plugin to the mixer. \\
+\hline
+{\em flags} & for more info see bassmix documentation. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if succesful else false. 
+\end{DoxyReturn}
+
+
+Definition at line 13 of file msmastercmp.\-cpp.
+
+
+\begin{DoxyCode}
+13                                                                 \{
+14     \textcolor{keywordflow}{if}(\_curInpChannel != 0)\{
+15         \textcolor{keywordflow}{if}(BASS\_Mixer\_ChannelRemove(\_curInpChannel))\{
+16             \_curInpChannel=0;
+17         \}
+18         \textcolor{keywordflow}{else}\{
+19             \_lastError=\textcolor{keyword}{new} \hyperlink{class_m_s_master_error}{MSMasterError}(MSMasterError::ChannelRemove\_Error,\textcolor{keyword}{new} QString(\textcolor{stringliteral}{"
+      MSMasterSplitter"}),\textcolor{keyword}{new} QString(\textcolor{stringliteral}{"Unable to remove current channel!"}));
+20             \_lastError->raise();
+21             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+22         \}
+23     \}
+24     \textcolor{keywordflow}{if}(!BASS\_Mixer\_StreamAddChannel(\_mixerHandle,channel,flags))\{
+25         \_lastError=\textcolor{keyword}{new} \hyperlink{class_m_s_master_error}{MSMasterError}(MSMasterError::AddChannel\_Error, \textcolor{keyword}{new} QString(\textcolor{stringliteral}{"
+      MSMasterSplitter"}), \textcolor{keyword}{new} QString(\textcolor{stringliteral}{"Setting input channel failed!"}));
+26         \_lastError->raise();
+27         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+28     \}
+29     \textcolor{keywordtype}{float} matrix[2][2]=\{
+30         \{0,-1\},
+31         \{0,1\}
+32     \};
+33     \textcolor{keywordflow}{if}(!BASS\_Mixer\_ChannelSetMatrix(channel, *matrix))\{
+34         \_lastError=\textcolor{keyword}{new} \hyperlink{class_m_s_master_error}{MSMasterError}(MSMasterError::SetMatrix\_Error, \textcolor{keyword}{new} QString(\textcolor{stringliteral}{"
+      MSMasterSplitter"}), \textcolor{keyword}{new} QString(\textcolor{stringliteral}{"Unable to set matrix on Channel!"}));
+35         \_lastError->raise();
+36         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+37     \}
+38     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+39 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+M\-S\-Master\-Cmp/msmastercmp.\-h\item 
+M\-S\-Master\-Cmp/msmastercmp.\-cpp\end{DoxyCompactItemize}

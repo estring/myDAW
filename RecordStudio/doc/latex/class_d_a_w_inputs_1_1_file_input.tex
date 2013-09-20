@@ -1,0 +1,92 @@
+\hypertarget{class_d_a_w_inputs_1_1_file_input}{\section{D\-A\-W\-Inputs\-:\-:File\-Input Class Reference}
+\label{class_d_a_w_inputs_1_1_file_input}\index{D\-A\-W\-Inputs\-::\-File\-Input@{D\-A\-W\-Inputs\-::\-File\-Input}}
+}
+
+
+The \hyperlink{class_d_a_w_inputs_1_1_file_input}{File\-Input} class.  
+
+
+
+
+{\ttfamily \#include $<$fileinput.\-h$>$}
+
+
+
+Inheritance diagram for D\-A\-W\-Inputs\-:\-:File\-Input\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{class_d_a_w_inputs_1_1_file_input__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for D\-A\-W\-Inputs\-:\-:File\-Input\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{class_d_a_w_inputs_1_1_file_input__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_d_a_w_inputs_1_1_file_input_a5a18fa8381fb317541c12ca49d0d1a29_a5a18fa8381fb317541c12ca49d0d1a29}{File\-Input} (Q\-String $\ast$file, B\-O\-O\-L mem=false, Q\-W\-O\-R\-D offset=0, Q\-W\-O\-R\-D length=0, D\-W\-O\-R\-D flags=B\-A\-S\-S\-\_\-\-S\-T\-R\-E\-A\-M\-\_\-\-D\-E\-C\-O\-D\-E$|$B\-A\-S\-S\-\_\-\-S\-A\-M\-P\-L\-E\-\_\-\-F\-L\-O\-A\-T$|$B\-A\-S\-S\-\_\-\-A\-S\-Y\-N\-C\-F\-I\-L\-E)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_d_a_w_inputs_1_1_file_input}{File\-Input}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_d_a_w_inputs_1_1_file_input}{File\-Input} class. 
+
+Definition at line 12 of file fileinput.\-h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_d_a_w_inputs_1_1_file_input_a5a18fa8381fb317541c12ca49d0d1a29_a5a18fa8381fb317541c12ca49d0d1a29}{\index{D\-A\-W\-Inputs\-::\-File\-Input@{D\-A\-W\-Inputs\-::\-File\-Input}!File\-Input@{File\-Input}}
+\index{File\-Input@{File\-Input}!DAWInputs::FileInput@{D\-A\-W\-Inputs\-::\-File\-Input}}
+\subsubsection[{File\-Input}]{\setlength{\rightskip}{0pt plus 5cm}D\-A\-W\-Inputs\-::\-File\-Input\-::\-File\-Input (
+\begin{DoxyParamCaption}
+\item[{Q\-String $\ast$}]{file, }
+\item[{B\-O\-O\-L}]{mem = {\ttfamily false}, }
+\item[{Q\-W\-O\-R\-D}]{offset = {\ttfamily 0}, }
+\item[{Q\-W\-O\-R\-D}]{length = {\ttfamily 0}, }
+\item[{D\-W\-O\-R\-D}]{flags = {\ttfamily BASS\-\_\-STREAM\-\_\-DECODE~$|$~BASS\-\_\-SAMPLE\-\_\-FLOAT~$|$~BASS\-\_\-ASYNCFILE}}
+\end{DoxyParamCaption}
+)}}\label{class_d_a_w_inputs_1_1_file_input_a5a18fa8381fb317541c12ca49d0d1a29_a5a18fa8381fb317541c12ca49d0d1a29}
+
+
+\hyperlink{class_d_a_w_inputs_1_1_file_input}{File\-Input}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & \\
+\hline
+{\em mem} & \\
+\hline
+{\em offset} & \\
+\hline
+{\em length} & \\
+\hline
+{\em flags} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 3 of file fileinput.\-cpp.
+
+
+\begin{DoxyCode}
+4 \{
+5     this->setInputHandle(BASS\_StreamCreateFile(mem, file, offset, length, flags));
+6 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
+\item 
+D\-A\-W\-Components/fileinput.\-h\item 
+D\-A\-W\-Components/fileinput.\-cpp\end{DoxyCompactItemize}

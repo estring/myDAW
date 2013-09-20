@@ -1,0 +1,61 @@
+.TH "DAWInputs::FileInput" 3 "Sat Aug 31 2013" "RecordStudio" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DAWInputs::FileInput \- 
+.PP
+The \fBFileInput\fP class\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <fileinput\&.h>\fP
+.PP
+Inherits \fBDAWInputs::InputBase\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBFileInput\fP (QString *file, BOOL mem=false, QWORD offset=0, QWORD length=0, DWORD flags=BASS_STREAM_DECODE|BASS_SAMPLE_FLOAT|BASS_ASYNCFILE)"
+.br
+.RI "\fI\fBFileInput\fP\&. \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+The \fBFileInput\fP class\&. 
+.PP
+Definition at line 12 of file fileinput\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "DAWInputs::FileInput::FileInput (QString *file, BOOLmem = \fCfalse\fP, QWORDoffset = \fC0\fP, QWORDlength = \fC0\fP, DWORDflags = \fCBASS_STREAM_DECODE | BASS_SAMPLE_FLOAT | BASS_ASYNCFILE\fP)"
+
+.PP
+\fBFileInput\fP\&. \fBParameters:\fP
+.RS 4
+\fIfile\fP 
+.br
+\fImem\fP 
+.br
+\fIoffset\fP 
+.br
+\fIlength\fP 
+.br
+\fIflags\fP 
+.RE
+.PP
+
+.PP
+Definition at line 3 of file fileinput\&.cpp\&.
+.PP
+.nf
+4 {
+5     this->setInputHandle(BASS_StreamCreateFile(mem, file, offset, length, flags));
+6 }
+.fi
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RecordStudio from the source code\&.

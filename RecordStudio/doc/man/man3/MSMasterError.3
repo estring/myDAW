@@ -1,0 +1,58 @@
+.TH "MSMasterError" 3 "Sat Aug 31 2013" "RecordStudio" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MSMasterError \- 
+.PP
+The \fBMSMasterError\fP class Thrown by the MSMasterComponents\&. Contains Information about the errors occured in those components\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <msmastererror\&.h>\fP
+.PP
+Inherits QException\&.
+.SS "Public Types"
+
+.in +1c
+.ti -1c
+.RI "enum \fBMSMASTER_ERROR_CODE\fP { \fBUnknown_Error\fP, \fBChannelRemove_Error\fP, \fBAddChannel_Error\fP, \fBSetMatrix_Error\fP }"
+.br
+.RI "\fIThe MSMASTER_ERROR_CODE enum\&. \fP"
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMSMasterError\fP (\fBMSMasterError::MSMASTER_ERROR_CODE\fP ec, QString *cmp, QString *errorMsg)"
+.br
+.ti -1c
+.RI "void \fBraise\fP () const "
+.br
+.ti -1c
+.RI "\fBMSMasterError\fP * \fBclone\fP () const "
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBMSMASTER_ERROR_CODE\fP \fBerrorCode\fP"
+.br
+.ti -1c
+.RI "QString * \fBraisingComponent\fP"
+.br
+.ti -1c
+.RI "QString * \fBerrMsg\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+The \fBMSMasterError\fP class Thrown by the MSMasterComponents\&. Contains Information about the errors occured in those components\&. 
+.PP
+Definition at line 11 of file msmastererror\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for RecordStudio from the source code\&.
